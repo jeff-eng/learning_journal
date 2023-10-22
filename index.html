@@ -8,6 +8,78 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-    
+        <header class="header">
+            <!-- Logo -->
+            <div class="header-wrapper">
+                <a href="#">
+                    <picture class="header__logo">
+                        <source srcset="assets/lj_logo100.webp" type="image/webp" media="">
+                        <img src="assets/lj_logo.jpg" alt="quote bubble">
+                    </picture>
+                </a>
+                <h1 class="header__heading">My Learning Journal</h1>
+            </div>
+            <!-- Nav links -->
+            <nav class="main-nav">
+                <ul class="main-nav">
+                    <li class="main-nav__item">
+                        <a href="index.html" class="main-nav__link">HOME</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="about.html" class="main-nav__link">ABOUT ME</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main-container">
+            <!-- Hero article -->
+            <section class="hero-container">
+                <article class="hero-post">
+                    <a href="#">
+                        <picture class="hero-post__image">
+                            <source srcset="/images/article_hero_0.webp" type="image/webp" media="">
+                            <img src="/images/article_hero_0.jpg" alt="laptop on desk">
+                        </picture>
+                    </a>
+                    <div class="hero-post-wrapper">
+                        <time class="hero-post__date" datetime="YYYY-MM-DD">July 23, 2022</time>
+                        <a href="#" class="hero-post__link">
+                            <h2 class="hero-post__title">My new journey as a bootcamp student.</h2>
+                        </a>
+                        <p class="hero-post__body">After several months of learning in the Frontend Developer Career Path, 
+                            I've made the big jump over to the Bootcamp to get expert code reviews 
+                            of my Solo Projects projects and meet like-minded peers.
+                        </p>
+                    </div>
+                </article>
+            </section>
+            
+            <!-- List of Blog articles -->
+            <section class="grid grid--posts">
+                <article class="blog-post">
+                    <a href="#">                        
+                        <picture class="blog-post__image">
+                            <source srcset="thumbnails/article_thumb_1.webp" type="image/webp" media="">
+                            <img src="/thumbnails/article_thumb_1.jpg" alt="laptop on desk">
+                        </picture>
+                    </a>
+                    <div class="blog-post-wrapper">
+                        <!-- <time> will need to be a block element -->
+                        <time class="blog-post__date" datetime="YYYY-MM-DD">July 23, 2022</time>
+                        <a href="#" class="blog-post__link">
+                            <h2 class="blog-post__title">Blog one</h2>
+                        </a>
+                        <p class="blog-post__body">I'm excited to start a new learning journey as a Scrimba Bootcamp student! 
+                            After several months of learning in the Frontend Developer Career Path.
+                        </p>
+                    </div>
+                </article>
+            </section>
+            <button class="btn btn--underline" type="button">View More</button>
+        </main>
+        <footer class="footer">
+            <h3 class="footer__heading">My Learning Journal</h3>
+            <p class="footer__copyright">Copyright &copy;2023</p>
+        </footer>
     </body>
 </html>
