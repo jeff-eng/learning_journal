@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Learning Journal</title>
+        <title>Learning Journal - Home</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="index.css">
     </head>
@@ -13,7 +13,7 @@
             <div class="header-wrapper">
                 <a href="#">
                     <picture class="header__logo">
-                        <source srcset="assets/lj_logo100.webp" type="image/webp" media="">
+                        <source media="(min-width: )" srcset="assets/lj_logo100.webp" type="image/webp">
                         <img src="assets/lj_logo.jpg" alt="quote bubble">
                     </picture>
                 </a>
@@ -35,9 +35,9 @@
             <!-- Hero article -->
             <section class="hero-container">
                 <article class="hero-post">
-                    <a href="#">
+                    <a href="blogpost.html">
                         <picture class="hero-post__image">
-                            <source srcset="/images/article_hero_0.webp" type="image/webp" media="">
+                            <source media="(min-width: )" srcset="/images/article_hero_0.webp" type="image/webp">
                             <img src="/images/article_hero_0.jpg" alt="laptop on desk">
                         </picture>
                     </a>
@@ -59,16 +59,18 @@
                 <article class="blog-post">
                     <a href="#">                        
                         <picture class="blog-post__image">
-                            <source srcset="thumbnails/article_thumb_1.webp" type="image/webp" media="">
+                            <source media="(min-width: )" srcset="thumbnails/article_thumb_1.webp" type="image/webp">
                             <img src="/thumbnails/article_thumb_1.jpg" alt="laptop on desk">
                         </picture>
                     </a>
                     <div class="blog-post-wrapper">
-                        <!-- <time> will need to be a block element -->
-                        <time class="blog-post__date" datetime="YYYY-MM-DD">July 23, 2022</time>
-                        <a href="#" class="blog-post__link">
-                            <h2 class="blog-post__title">Blog one</h2>
-                        </a>
+                        <header class="blog-post__header">
+                            <time class="blog-post__date" datetime="YYYY-MM-DD">July 23, 2022</time>
+                            <!-- <time> will need to be a block element -->
+                            <a href="#" class="blog-post__link">
+                                <h2 class="blog-post__title">Blog one</h2>
+                            </a>
+                        </header>
                         <p class="blog-post__body">I'm excited to start a new learning journey as a Scrimba Bootcamp student! 
                             After several months of learning in the Frontend Developer Career Path.
                         </p>

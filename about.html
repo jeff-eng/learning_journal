@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learning Journal - About Me</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="about.css">
+    </head>
+    <body>
+        <header class="header">
+            <!-- Logo -->
+            <div class="header-wrapper">
+                <a href="#">
+                    <picture class="header__logo">
+                        <!-- <source srcset="assets/lj_logo100.webp" type="image/webp" media=""> -->
+                        <source media="(min-width: )" srcset="assets/lj_logo100.webp" type="image/webp">
+                        <img src="assets/lj_logo.jpg" alt="quote bubble">
+                    </picture>
+                </a>
+                <h2 class="header__heading">My Learning Journal</h2>
+            </div>
+            <!-- Nav links -->
+            <nav class="main-nav">
+                <ul class="main-nav">
+                    <li class="main-nav__item">
+                        <a href="index.html" class="main-nav__link">HOME</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="about.html" class="main-nav__link">ABOUT ME</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main-container">
+            <section class="about">
+                <picture class="about__image">
+                    <source media="(min-width: )" srcset="assets/profile_img_small.webp" type="image/webp">
+                    <img src="assets/profile_img_small.jpg" alt="portrait photo">
+                </picture>
+                <h1 class="about__heading">Hello! My name is Jeff. Welcome to my learning journal.</h1>
+                <p class="about__paragraph">I joined the Bootcamp in May 2023 after serendipitously discovering Scrimba while
+                    browsing through Twitter (now X) for React learning resources. I was so impressed
+                    with the quality of the free React Basics course, I decided to join the Bootcamp.</p>
+                <p class="about__paragraph">It was an opportunity to get up to speed on the latest HTML, CSS, and JavaScript through building 
+                    projects, as well as get expert code reviews, level up with weekly workshops, and connect with 
+                    like-minded people.</p>
+                <p class="about__paragraph">My learning journal is an opportunity reflect on challenges faced, my problem-solving process,
+                    and hopefully provide learning insights for fellow aspiring developers.</p>
+            </section>
+            <section class="grid grid--posts">
+                <h2 class="blog-post__header">Recent posts</h2>
+                <article class="blog-post">
+                    <a href="#">                        
+                        <picture class="blog-post__image">
+                            <source media="(min-width: )" srcset="thumbnails/article_thumb_1.webp" type="image/webp">
+                            <img src="/thumbnails/article_thumb_1.jpg" alt="laptop on desk">
+                        </picture>
+                    </a>
+                    <div class="blog-post-wrapper">
+                        <header class="blog-post__header">
+                            <time class="blog-post__date" datetime="YYYY-MM-DD">July 23, 2022</time>
+                            <a href="#" class="blog-post__link">
+                                <h2 class="blog-post__title">Blog one</h2>
+                            </a>
+                        </header>
+                        <p class="blog-post__body">I'm excited to start a new learning journey as a Scrimba Bootcamp student! 
+                            After several months of learning in the Frontend Developer Career Path.
+                        </p>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer class="footer">
+            <h3 class="footer__heading">My Learning Journal</h3>
+            <p class="footer__copyright">Copyright &copy;2023</p>
+        </footer>
+    </body>
+</html>
