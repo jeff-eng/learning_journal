@@ -1,5 +1,5 @@
 const blogPosts = [
-    {
+    {   
         id: 0,
         publishedDate: '2023-01-01',
         title: 'Happy New (Coding) Year',
@@ -340,7 +340,9 @@ const blogPosts = [
             const options = { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' };
             return d.toLocaleDateString('en-US', options);
         }
-    }
+    },
+    
+    
 ];
 
 export { blogPosts };
