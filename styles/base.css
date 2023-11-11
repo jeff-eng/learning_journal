@@ -1,0 +1,87 @@
+/* CSS reset */
+*, 
+*:before, 
+*:after {
+    box-sizing: border-box;
+}
+
+html, 
+body, 
+h1, 
+h2, 
+h3, 
+p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans 3', sans-serif;
+    color: #000;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav__link:hover {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+}
+
+h2 {
+    border: 2px dotted red;
+}
+
+a h2:hover {
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Header styling - logo & nav */
+.header {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    grid-template-areas: 
+     'logo ..... nav';
+}
+
+.header-wrapper, 
+.main-nav {
+    display: flex;
+}
+
+.header-wrapper {
+    grid-area: logo;
+}
+
+.main-nav {
+    grid-area: nav;
+    /* Flexbox gap */
+    gap: 1em;
+}
+
+/* Footer styling */
+.footer {
+    background: #202020;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__heading {
+    color: #ECECEC;
+    font-size: 0.75rem;
+}
+
+.footer__copyright {
+    color: #D7D7D7;
+    font-size: 0.75rem;
+}
