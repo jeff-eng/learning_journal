@@ -36,12 +36,14 @@ function createHeroPostItem(blogPost) {
     const article = createBasicElement(htmlElementTable.article, `hero-post-item-${blogPost.id}`, 'hero-post');
 
     article.innerHTML = 
-        `<a href="blogpost.html" aria-label="go to article: My new journey as a bootcamp student.">
-            <picture>
-                <source media="" srcset="${blogPost.webpFilepath}" type="image/webp">
-                <img class="hero-post__image" src="${blogPost.jpgFilepath}" alt="${blogPost.imgDescription}">
-            </picture>
-        </a>
+        `<div class="hero-img-container">
+            <a href="blogpost.html" aria-label="go to article: My new journey as a bootcamp student.">
+                <picture>
+                    <source media="" srcset="${blogPost.webpFilepath}" type="image/webp">
+                    <img class="hero-post__image" src="${blogPost.jpgFilepath}" alt="${blogPost.imgDescription}">
+                </picture>
+            </a>
+        </div>
         <div class="hero-post-wrapper">
             <time class="hero-post__date" datetime="YYYY-MM-DD">${blogPost.getFormattedDateString()}</time>
             <a href="blogpost.html" class="hero-post__link">
