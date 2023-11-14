@@ -1,0 +1,32 @@
+.hero-container {
+    border: 2px solid greenyellow;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid--posts {
+    border: 3px solid blue;
+    margin-top: 2.13em;
+    grid-template-columns: minmax(auto, 35em);
+    gap: 41px;
+}
+
+@media (min-width: 415px) {
+    .grid--posts {
+        border: 3px solid orange;
+    }
+}
+
+@media (min-width: 675px) {
+    .grid--posts {
+        grid-template-columns: repeat(2, minmax(309px, 375px));
+    }
+}
+
+@media (min-width: 1085px) {
+    .grid--posts {
+        grid-template-columns: repeat(3, minmax(309px, 375px));
+    }
+}
