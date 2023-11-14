@@ -16,20 +16,18 @@ function createPostItem(blogPost) {
 
     article.innerHTML = 
         `<a href="#" aria-label="go to article: ${blogPost.title}">                        
-            <picture class="blog-post__image">
+            <picture>
                 <source media="(min-width: )" srcset="${blogPost.webpFilepath}" type="image/webp">
-                <img src="${blogPost.jpgFilepath}" alt="${blogPost.imgDescription}">
+                <img class="blog-post__image" src="${blogPost.jpgFilepath}" alt="${blogPost.imgDescription}">
             </picture>
         </a>
-        <div class="blog-post-wrapper">
-            <header class="blog-post__header">
-                <time class="blog-post__date" datetime="YYYY-MM-DD">${blogPost.getFormattedDateString()}</time>
-                <a href="#" class="blog-post__link">
-                    <h2 class="blog-post__title">${blogPost.title}</h2>
-                </a>
-            </header>
-            ${blogPost.getFirstParagraph()}
-        </div>`;
+        <header class="blog-post__header">
+            <time class="blog-post__date" datetime="YYYY-MM-DD">${blogPost.getFormattedDateString()}</time>
+            <a href="#" class="blog-post__link">
+                <h2 class="blog-post__title">${blogPost.title}</h2>
+            </a>
+        </header>
+        <p class="blog-post__preview">${blogPost.getFirstParagraphText()}</p>`;
 
     return article;
 }
@@ -49,10 +47,18 @@ function createHeroPostItem(blogPost) {
             <a href="blogpost.html" class="hero-post__link">
                 <h2 class="hero-post__title">${blogPost.title}</h2>
             </a>
-            <p class="hero-post__body">${blogPost.getFirstParagraph()}</p>
+            <p class="hero-post__body">${blogPost.getFirstParagraphText()}</p>
         </div>`;
 
     return article;
 }
 
-export { createHeroPostItem, createPostItem }
+function setYear() {
+    document.addEventListener('DOMContentLoaded', () => {
+        const date = new Date();
+        const year = date.getUTCFullYear();
+        document.getElementById('footer__year').textContent = year;
+    });
+}
+
+export { createHeroPostItem, createPostItem, setYear };
