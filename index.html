@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Learning Journal - Home</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Source+Sans+3:wght@300;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="styles/base.css">
         <link rel="stylesheet" href="styles/index.css">
@@ -21,7 +24,7 @@
                 <h1 class="header__heading">My Learning Journal</h1>
             </div>
             <!-- Nav links -->
-            <nav class="main-nav">
+            <nav class="nav">
                 <ul class="main-nav">
                     <li class="main-nav__item">
                         <a href="index.html" class="main-nav__link">HOME</a>
@@ -46,11 +49,11 @@
                 <!-- Posts dynamically rendered -->
 
             </section>
-            <button class="btn btn--underline" id="btn-view-more">View More</button>
+            <!-- <button class="btn btn--underline" id="btn-view-more">View More</button> -->
         </main>
         <footer class="footer">
             <h3 class="footer__heading">My Learning Journal</h3>
-            <p class="footer__copyright">Copyright &copy;2023</p>
+            <p class="footer__copyright">Copyright &copy;<span id="footer__year">2023</span></p>
         </footer>
         <script type="module" src="js/functions.js"></script>
         <script type="module" src="js/index.js"></script>
