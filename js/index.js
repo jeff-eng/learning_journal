@@ -17,6 +17,10 @@ window.onscroll = () => {
     }
 };
 
+document.getElementById('btn-view-more').addEventListener('click', () => {
+    loadPosts();
+});
+
 function loadPosts() {
     const startIndex = trackedIndex;
     const endIndex = trackedIndex + loadPostsQty;
