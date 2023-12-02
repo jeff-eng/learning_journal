@@ -12,45 +12,45 @@
         <link rel="stylesheet" href="styles/index.css">
     </head>
     <body>
-        <header class="header">
-            <!-- Logo -->
-            <div class="header-wrapper">
+        <div class="content-wrapper">
+            <header class="header">
+                <!-- Logo -->
                 <a href="index.html" aria-label="Go to Home Page">
-                    <picture class="header__logo">
+                    <picture>
                         <source media="(min-width: )" srcset="assets/lj_logo100.webp" type="image/webp">
-                        <img src="assets/lj_logo.jpg" alt="quote bubble">
+                        <img class="header__logo" src="assets/lj_logo.jpg" alt="quote bubble">
                     </picture>
                 </a>
                 <h1 class="header__heading">My Learning Journal</h1>
-            </div>
-            <!-- Nav links -->
-            <nav class="nav">
-                <ul class="main-nav">
-                    <li class="main-nav__item">
-                        <a href="index.html" class="main-nav__link">HOME</a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a href="about.html" class="main-nav__link">ABOUT ME</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main class="main-container">
-            <!-- Hero article -->
-            <section class="hero-container" id="hero-container">
-
-                <!-- Hero post dynamically rendered -->
-
-            </section>
-            
-            <!-- List of Blog articles -->
-            <section class="grid grid--posts" id="recent-posts">
+                <!-- Nav links -->
+                <nav class="nav">
+                    <ul class="main-nav">
+                        <li class="main-nav__item">
+                            <a href="index.html" class="main-nav__link">HOME</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="about.html" class="main-nav__link">ABOUT ME</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main class="main-container">
+                <!-- Hero article -->
+                <section class="hero-container" id="hero-container">
+    
+                    <!-- Hero post dynamically rendered -->
+    
+                </section>
                 
-                <!-- Posts dynamically rendered -->
-
-            </section>
-            <button class="btn btn--underline" id="btn-view-more">View More</button>
-        </main>
+                <!-- List of Blog articles -->
+                <section class="grid grid--posts" id="recent-posts">
+                    
+                    <!-- Posts dynamically rendered -->
+    
+                </section>
+                <button class="btn btn--underline" id="btn-view-more">View More</button>
+            </main>
+        </div>
         <footer class="footer">
             <h3 class="footer__heading">My Learning Journal</h3>
             <p class="footer__copyright">Copyright &copy;<span id="footer__year">2023</span></p>
