@@ -12,42 +12,42 @@
         <link rel="stylesheet" href="styles/blogpost.css">
     </head>
     <body>
-        <header class="header">
-            <!-- Logo -->
-            <div class="header-wrapper">
+        <div class="content-wrapper">
+            <header class="header">
+                <!-- Logo -->
                 <a href="index.html" aria-label="Go to Home Page">
                     <picture>
-                        <source media="(min-width: )" srcset="/assets/lj_logo100.webp" type="image/webp">
-                        <img class="header__logo" src="/assets/lj_logo.jpg" alt="quote bubble">
+                        <source media="(max-width: 500px)" srcset="assets/lj_logo100.webp" type="image/webp">
+                        <img class="header__logo" src="assets/lj_logo.jpg" alt="quote bubble">
                     </picture>
                 </a>
-                <h2 class="header__heading">My Learning Journal</h2>
-            </div>
-            <!-- Nav links -->
-            <nav class="nav">
-                <ul class="main-nav">
-                    <li class="main-nav__item">
-                        <a href="index.html" class="main-nav__link">HOME</a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a href="about.html" class="main-nav__link">ABOUT ME</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main class="main-container">
-            <section class="feature-post-container" id="feature-post-container">
-                
-                <!-- Feature post content dynamically generated -->
-
-            </section>
-            <section class="grid grid--posts" id="recent-posts">
-                <h2>Recent posts</h2>
-
-                <!-- Recent post previews dynamically generated -->
-                
-            </section>
-        </main>
+                <h1 class="header__heading">My Learning Journal</h1>
+                <!-- Nav links -->
+                <nav class="nav">
+                    <ul class="main-nav">
+                        <li class="main-nav__item">
+                            <a href="index.html" class="main-nav__link">HOME</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="about.html" class="main-nav__link">ABOUT ME</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main class="main-container">
+                <section class="feature-post-container" id="feature-post-container">
+                    
+                   <!-- Feature post content dynamically generated  -->
+    
+                </section>
+                <h2 class="recent-posts-heading">Recent posts</h2>
+                <section class="grid grid--posts" id="recent-posts">
+    
+                    <!-- Recent post previews dynamically generated -->
+                    
+                </section>
+            </main> 
+        </div>
         <footer class="footer">
             <h3 class="footer__heading">My Learning Journal</h3>
             <p class="footer__copyright">Copyright &copy;<span id="footer__year">2023</span></p>
