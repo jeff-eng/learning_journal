@@ -13,7 +13,7 @@ function createBasicElement(tagType, idName='', ...classNames) {
 
 function createPostItem(blogPost) {
     const article = createBasicElement(htmlElementTable.article, `post-item-${blogPost.id}`, 'blog-post');
-
+    
     article.innerHTML = 
         `<a href="#" aria-label="go to article: ${blogPost.title}">                        
             <picture>
@@ -26,8 +26,8 @@ function createPostItem(blogPost) {
             <a href="#" class="blog-post__link">
                 <h2 class="blog-post__title">${blogPost.title}</h2>
             </a>
-        </header>
-        <p class="blog-post__preview">${blogPost.getFirstParagraphText()}</p>`;
+            <p class="blog-post__preview">${blogPost.getFirstParagraphText()}</p>
+        </header>`;
 
     return article;
 }
@@ -51,7 +51,7 @@ function createHeroPostItem(blogPost) {
             </a>
             <p class="hero-post__body">${blogPost.getFirstParagraphText()}</p>
         </div>`;
-
+        
     return article;
 }
 
