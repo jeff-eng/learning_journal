@@ -14,15 +14,13 @@
     <body>
         <header class="header">
             <!-- Logo -->
-            <div class="header-wrapper">
-                <a href="index.html" aria-label="Go to Home Page">
-                    <picture class="header__logo">
-                        <source media="(min-width: )" srcset="assets/lj_logo100.webp" type="image/webp">
-                        <img src="assets/lj_logo.jpg" alt="quote bubble">
-                    </picture>
-                </a>
-                <h2 class="header__heading">My Learning Journal</h2>
-            </div>
+            <a href="index.html" aria-label="Go to Home Page">
+                <picture>
+                    <source media="(min-width: )" srcset="assets/lj_logo100.webp" type="image/webp">
+                    <img class="header__logo" src="assets/lj_logo.jpg" alt="quote bubble">
+                </picture>
+            </a>
+            <h1 class="header__heading">My Learning Journal</h1>
             <!-- Nav links -->
             <nav class="nav">
                 <ul class="main-nav">
@@ -37,22 +35,24 @@
         </header>
         <main class="main-container">
             <section class="about">
-                <picture class="about__image">
+                <picture>
                     <source media="(min-width: )" srcset="/assets/profile_img_small.webp" type="image/webp">
-                    <img src="/assets/profile_img_small.jpg" alt="portrait photo">
+                    <img class="about__image" src="/assets/profile_img_small.jpg" alt="portrait photo">
                 </picture>
                 <h1 class="about__heading">Hello! My name is Jeff. Welcome to my learning journal.</h1>
-                <p class="about__paragraph">I joined the Bootcamp in May 2023 after serendipitously discovering Scrimba while
-                    browsing through Twitter (now X) for React learning resources. I was so impressed
-                    with the quality of the free React Basics course, I decided to join the Bootcamp.</p>
-                <p class="about__paragraph">It was an opportunity to get up to speed on the latest HTML, CSS, and JavaScript through building 
-                    projects, as well as get expert code reviews, level up with weekly workshops, and connect with 
-                    like-minded people.</p>
-                <p class="about__paragraph">My learning journal is an opportunity reflect on challenges faced, my problem-solving process,
-                    and hopefully provide learning insights for fellow aspiring developers.</p>
+                <div class="about__paragraph-wrapper">
+                    <p class="about__paragraph">I joined the Scrimba Bootcamp in May 2023 after serendipitously discovering Scrimba while
+                        browsing through Twitter (now X) for React learning resources. I was so impressed
+                        with the quality of the free React Basics course, I decided to join the Bootcamp.</p>
+                    <p class="about__paragraph">It was an opportunity to get up to speed on the latest HTML, CSS, and JavaScript through building 
+                        projects, as well as get expert code reviews, level up with weekly workshops, and connect with 
+                        like-minded people.</p>
+                    <p class="about__paragraph">My learning journal is an opportunity reflect on challenges faced, my problem-solving process,
+                        and hopefully provide learning insights for fellow aspiring developers.</p>
+                </div>
             </section>
+            <h2 class="recent-posts-heading">Recent posts</h2>
             <section class="grid grid--posts" id="about-recent-posts">
-                <h2 class="blog-post__header">Recent posts</h2>
                 
                 <!-- Recent post previews dynamically generated -->
 
