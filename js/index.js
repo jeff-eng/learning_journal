@@ -1,5 +1,5 @@
 import { blogPosts } from './data.js';
-import { createHeroPostItem, createPostItem } from './functions.js';
+import { createHeroPostItem, createPostItem, setYear } from './functions.js';
 
 const reverseChronoPosts = blogPosts.sort((postA, postB) => {
     const dateA = new Date(postA.publishedDate);
@@ -9,6 +9,13 @@ const reverseChronoPosts = blogPosts.sort((postA, postB) => {
 
 let trackedIndex = 0;
 const loadPostsQty = 3;
+
+// Infinite scroll - auto-load posts
+window.onscroll = () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        loadPosts();
+    }
+};
 
 document.getElementById('btn-view-more').addEventListener('click', () => {
     loadPosts();
@@ -26,9 +33,11 @@ function loadPosts() {
         document.getElementById('hero-container').append(createHeroPostItem(postsToDisplay[0]));
         document.getElementById('recent-posts').append(...postsToDisplay.slice(1).map((post) => createPostItem(post)));
     } else {
-        document.getElementById('recent-posts').append(...postsToDisplay.map((post) => createHeroPostItem(post)));
+        document.getElementById('recent-posts').append(...postsToDisplay.map((post) => createPostItem(post)));
     }
 }
 
 // Load initial set of posts
 loadPosts();
+// Dynamically set year
+setYear();

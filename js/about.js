@@ -1,5 +1,5 @@
 import { blogPosts } from './data.js';
-import { createPostItem } from './functions.js';
+import { createPostItem, setYear } from './functions.js';
 
 const reverseChronoPosts = blogPosts.sort((postA, postB) => {
     const dateA = new Date(postA.publishedDate);
@@ -8,3 +8,6 @@ const reverseChronoPosts = blogPosts.sort((postA, postB) => {
 });
 
 document.getElementById('about-recent-posts').append(...reverseChronoPosts.slice(1, 4).map((post) => createPostItem(post)));
+
+// Dynamically set year
+setYear();

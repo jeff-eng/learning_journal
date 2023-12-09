@@ -4,23 +4,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Learning Journal - About Me</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="styles/base.css">
         <link rel="stylesheet" href="styles/about.css">
     </head>
     <body>
         <header class="header">
             <!-- Logo -->
-            <div class="header-wrapper">
-                <a href="index.html" aria-label="Go to Home Page">
-                    <picture class="header__logo">
-                        <source media="(min-width: )" srcset="assets/lj_logo100.webp" type="image/webp">
-                        <img src="assets/lj_logo.jpg" alt="quote bubble">
-                    </picture>
-                </a>
-                <h2 class="header__heading">My Learning Journal</h2>
-            </div>
+            <a href="index.html" aria-label="Go to Home Page">
+                <picture>
+                    <source media="(min-width: )" srcset="assets/lj_logo100.webp" type="image/webp">
+                    <img class="header__logo" src="assets/lj_logo.jpg" alt="quote bubble">
+                </picture>
+            </a>
+            <h1 class="header__heading">My Learning Journal</h1>
             <!-- Nav links -->
-            <nav class="main-nav">
+            <nav class="nav">
                 <ul class="main-nav">
                     <li class="main-nav__item">
                         <a href="index.html" class="main-nav__link">HOME</a>
@@ -33,22 +35,24 @@
         </header>
         <main class="main-container">
             <section class="about">
-                <picture class="about__image">
-                    <source media="(min-width: )" srcset="/assets/profile_img_small.webp" type="image/webp">
-                    <img src="/assets/profile_img_small.jpg" alt="portrait photo">
+                <picture>
+                    <source media="(max-width: 500px)" srcset="/assets/profile_img_small.webp" type="image/webp">
+                    <img class="about__image" src="/assets/profile_img_small.jpg" alt="portrait photo">
                 </picture>
                 <h1 class="about__heading">Hello! My name is Jeff. Welcome to my learning journal.</h1>
-                <p class="about__paragraph">I joined the Bootcamp in May 2023 after serendipitously discovering Scrimba while
-                    browsing through Twitter (now X) for React learning resources. I was so impressed
-                    with the quality of the free React Basics course, I decided to join the Bootcamp.</p>
-                <p class="about__paragraph">It was an opportunity to get up to speed on the latest HTML, CSS, and JavaScript through building 
-                    projects, as well as get expert code reviews, level up with weekly workshops, and connect with 
-                    like-minded people.</p>
-                <p class="about__paragraph">My learning journal is an opportunity reflect on challenges faced, my problem-solving process,
-                    and hopefully provide learning insights for fellow aspiring developers.</p>
+                <div class="about__paragraph-wrapper">
+                    <p class="about__paragraph">I joined the Scrimba Bootcamp in May 2023 after serendipitously discovering Scrimba while
+                        browsing through Twitter (now X) for React learning resources. I was so impressed
+                        with the quality of the free React Basics course, I decided to join the Bootcamp.</p>
+                    <p class="about__paragraph">It was an opportunity to get up to speed on the latest HTML, CSS, and JavaScript through building 
+                        projects, as well as get expert code reviews, level up with weekly workshops, and connect with 
+                        like-minded people.</p>
+                    <p class="about__paragraph">My learning journal is an opportunity reflect on challenges faced, my problem-solving process,
+                        and hopefully provide learning insights for fellow aspiring developers.</p>
+                </div>
             </section>
+            <h2 class="recent-posts-heading">Recent posts</h2>
             <section class="grid grid--posts" id="about-recent-posts">
-                <h2 class="blog-post__header">Recent posts</h2>
                 
                 <!-- Recent post previews dynamically generated -->
 
@@ -56,7 +60,7 @@
         </main>
         <footer class="footer">
             <h3 class="footer__heading">My Learning Journal</h3>
-            <p class="footer__copyright">Copyright &copy;2023</p>
+            <p class="footer__copyright">Copyright &copy;<span id="footer__year">2023</span></p>
         </footer>
         <script type="module" src="js/functions.js"></script>
         <script type="module" src="js/about.js"></script>

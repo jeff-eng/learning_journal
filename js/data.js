@@ -35,7 +35,7 @@ const blogPosts = [
                         ${postHtml}
                     </article>`;
         },
-        getFirstParagraph: function() {
+        getFirstParagraphText: function() {
             const parser = new DOMParser();
             // Create HTMLDocument from string
             const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
@@ -83,7 +83,7 @@ const blogPosts = [
                         ${postHtml}
                     </article>`;
         },
-        getFirstParagraph: function() {
+        getFirstParagraphText: function() {
             const parser = new DOMParser();
             // Create HTMLDocument from string
             const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
@@ -131,7 +131,7 @@ const blogPosts = [
                         ${postHtml}
                     </article>`;
         },
-        getFirstParagraph: function() {
+        getFirstParagraphText: function() {
             const parser = new DOMParser();
             // Create HTMLDocument from string
             const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
@@ -179,7 +179,7 @@ const blogPosts = [
                         ${postHtml}
                     </article>`;
         },
-        getFirstParagraph: function() {
+        getFirstParagraphText: function() {
             const parser = new DOMParser();
             // Create HTMLDocument from string
             const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
@@ -227,7 +227,7 @@ const blogPosts = [
                         ${postHtml}
                     </article>`;
         },
-        getFirstParagraph: function() {
+        getFirstParagraphText: function() {
             const parser = new DOMParser();
             // Create HTMLDocument from string
             const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
@@ -275,7 +275,7 @@ const blogPosts = [
                         ${postHtml}
                     </article>`;
         },
-        getFirstParagraph: function() {
+        getFirstParagraphText: function() {
             const parser = new DOMParser();
             // Create HTMLDocument from string
             const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
@@ -329,7 +329,7 @@ const blogPosts = [
                         ${postHtml}
                     </article>`;
         },
-        getFirstParagraph: function() {
+        getFirstParagraphText: function() {
             const parser = new DOMParser();
             // Create HTMLDocument from string
             const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
