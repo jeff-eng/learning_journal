@@ -21,7 +21,7 @@ function createPostItem(blogPost) {
                 <img class="blog-post__image" src="${blogPost.jpgFilepath}" alt="${blogPost.imgDescription}">
             </picture>
         </a>
-        <header class="blog-post__header">
+        <header class="flex blog-post__header">
             <time class="blog-post__date" datetime="YYYY-MM-DD">${blogPost.getFormattedDateString()}</time>
             <a href="#" class="blog-post__link">
                 <h2 class="blog-post__title">${blogPost.title}</h2>
@@ -44,7 +44,7 @@ function createHeroPostItem(blogPost) {
                 </picture>
             </a>
         </div>
-        <div class="hero-post-wrapper">
+        <div class="grid hero-post-wrapper">
             <time class="hero-post__date" datetime="YYYY-MM-DD">${blogPost.getFormattedDateString()}</time>
             <a href="blogpost.html" class="hero-post__link">
                 <h2 class="hero-post__title">${blogPost.title}</h2>
