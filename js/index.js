@@ -1,5 +1,6 @@
 import { blogPosts } from './data.js';
 import { createHeroPostItem, createPostItem, setYear } from './functions.js';
+import { Post } from './Post.js';
 
 const reverseChronoPosts = blogPosts.sort((postA, postB) => {
     const dateA = new Date(postA.publishedDate);
@@ -10,9 +11,9 @@ const reverseChronoPosts = blogPosts.sort((postA, postB) => {
 let trackedIndex = 0;
 const loadPostsQty = 3;
 
-// Infinite scroll - auto-load posts
+// Infinite scroll - auto-load posts when scrolling to bottom of page
 window.onscroll = () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10) {
         loadPosts();
     }
 };
@@ -34,7 +35,14 @@ function loadPosts() {
         document.getElementById('recent-posts').append(...postsToDisplay.slice(1).map((post) => createPostItem(post)));
     } else {
         document.getElementById('recent-posts').append(...postsToDisplay.map((post) => createPostItem(post)));
+
+        for (let i = 0; i < loadPostsQty; i++) {
+            const postObj = new Post();
+
+            reverseChronoPosts.push(postObj);
+        }
     }
+
 }
 
 // Load initial set of posts
