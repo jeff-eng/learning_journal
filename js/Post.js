@@ -5,8 +5,8 @@ export class Post {
         this.id = crypto.randomUUID();
         this.title = 'Scrimba Rocks!'
         this.publishedDate = getFormattedRandomDate((new Date(2023, 0, 1)), (new Date()));
-        this.webpFilepath = 'https://picsum.photos/309/232.webp';
-        this.jpgFilepath = 'https://picsum.photos/309/232.jpg';
+        this.webpFilepath = this.generateImageURL(false, 309, 232);
+        this.jpgFilepath = this.generateImageURL(true, 309, 232);
         this.imgDescription = 'placeholder image';
         this.postHtmlString = `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
                               ut labore et dolore magna aliqua.</p>
@@ -52,5 +52,12 @@ export class Post {
         const d = new Date(this.publishedDate);
         const options = { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' };
         return d.toLocaleDateString('en-US', options);
+    }
+
+    generateImageURL(isJpeg, pxWidth, pxHeight) {
+        const randomNum = Math.floor(Math.random() * 1000);
+        const imgUrl = isJpeg ? `https://picsum.photos/id/${randomNum}/${pxWidth}/${pxHeight}.jpg`
+            : `https://picsum.photos/id/${randomNum}/${pxWidth}/${pxHeight}.webp`;
+        return imgUrl;
     }
 }
