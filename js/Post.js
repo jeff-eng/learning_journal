@@ -2,7 +2,7 @@ import { getFormattedRandomDate } from "./functions.js";
 
 export class Post {
     constructor() {
-        this.id = crypto.randomUUID();
+        this.id = generateRandomUID(25);
         this.title = 'Scrimba Rocks!'
         this.publishedDate = getFormattedRandomDate((new Date(2023, 0, 1)), (new Date()));
         this.webpFilepath = this.generateImageURL(false, 309, 232);
@@ -60,4 +60,19 @@ export class Post {
             : `https://picsum.photos/id/${randomNum}/${pxWidth}/${pxHeight}.webp`;
         return imgUrl;
     }
+}
+
+function generateRandomUID(idLength) {
+    // Base case
+    if (!idLength) {
+        return '';
+    }
+
+    // Generate random character
+    const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+    const randomNum = Math.floor(Math.random() * charset.length);
+    let randomChar = charset[randomNum];
+
+    // Build ID string recursively
+    return randomChar += generateRandomUID(idLength - 1);
 }
