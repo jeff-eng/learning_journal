@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="styles/about.css">
     </head>
     <body>
-        <header class="header">
+        <header class="flex header">
             <!-- Logo -->
             <a href="index.html" aria-label="Go to Home Page">
                 <picture>
@@ -20,10 +20,10 @@
                     <img class="header__logo" src="assets/lj_logo.jpg" alt="quote bubble">
                 </picture>
             </a>
-            <h1 class="header__heading">My Learning Journal</h1>
+            <h2 class="header__heading">My Learning Journal</h2>
             <!-- Nav links -->
             <nav class="nav">
-                <ul class="main-nav">
+                <ul class="flex main-nav">
                     <li class="main-nav__item">
                         <a href="index.html" class="main-nav__link">HOME</a>
                     </li>
@@ -34,7 +34,7 @@
             </nav>
         </header>
         <main class="main-container">
-            <section class="about">
+            <section class="grid about">
                 <picture>
                     <source media="(max-width: 500px)" srcset="/assets/profile_img_small.webp" type="image/webp">
                     <img class="about__image" src="/assets/profile_img_small.jpg" alt="portrait photo">
@@ -51,7 +51,7 @@
                         and hopefully provide learning insights for fellow aspiring developers.</p>
                 </div>
             </section>
-            <h2 class="recent-posts-heading">Recent posts</h2>
+            <h3 class="recent-posts-heading">Recent posts</h3>
             <section class="grid grid--posts" id="about-recent-posts">
                 
                 <!-- Recent post previews dynamically generated -->

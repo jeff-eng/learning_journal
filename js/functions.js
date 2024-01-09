@@ -21,7 +21,7 @@ function createPostItem(blogPost) {
                 <img class="blog-post__image" src="${blogPost.jpgFilepath}" alt="${blogPost.imgDescription}">
             </picture>
         </a>
-        <header class="blog-post__header">
+        <header class="flex blog-post__header">
             <time class="blog-post__date" datetime="YYYY-MM-DD">${blogPost.getFormattedDateString()}</time>
             <a href="#" class="blog-post__link">
                 <h2 class="blog-post__title">${blogPost.title}</h2>
@@ -44,7 +44,7 @@ function createHeroPostItem(blogPost) {
                 </picture>
             </a>
         </div>
-        <div class="hero-post-wrapper">
+        <div class="grid hero-post-wrapper">
             <time class="hero-post__date" datetime="YYYY-MM-DD">${blogPost.getFormattedDateString()}</time>
             <a href="blogpost.html" class="hero-post__link">
                 <h2 class="hero-post__title">${blogPost.title}</h2>
@@ -63,52 +63,21 @@ function setYear() {
     });
 }
 
-// function BlogPost() {
-//     this.id = crypto.randomUUID();
-//     this.publishedDate = '2023-06-01';
-//     this.webpFilepath = '';
-//     this.jpgFilepath  = 'https://picsum.photos/309/232';
-//     this.imgDescription = 'placeholder image';
-//     this.postHtmlString: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-//                          ut labore et dolore magna aliqua.</p>
-//                         <picture>
-//                             <source media="" srcset="/images/article_5.webp" type="image/webp">
-//                             <img src="/images/article_5.jpg" alt="laptop on desk viewed at angle">
-//                         </picture>
-//                         <h2>Litora Feugiat Eu Maximus Erat Facilisis Torquent</h2>
-//                         <p>Nunc sed id semper risus in hendrerit gravida. Platea dictumst vestibulum rhoncus est pellentesque 
-//                         elit ullamcorper.</p>
-//                         <p>Ut tortor pretium viverra suspendisse potenti nullam ac. In fermentum posuere urna nec tincidunt 
-//                         praesent semper feugiat nibh.</p>
-//                         <h2>Rutrum Massa Lacus Torquent Justo At</h2>
-//                         <p>Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Ac felis donec et odio pellentesque.</p>`,
-//         get renderedHtml() { 
-//             return this.renderArticleHtml(
-//             this.getFormattedDateString(), 
-//             this.title, 
-//             this.postHtmlString
-//             )
-//         },
-//         renderArticleHtml: function(dateString, title, postHtml) {
-//             return `<article class="feature-post">
-//                         <header class="feature-post__header">
-//                             <time class="feature-post__date" datetime="YYYY-MM-DD">${dateString}</time>
-//                             <h1 class="feature-post__heading">${title}</h1>
-//                         </header>
-//                         ${postHtml}
-//                     </article>`;
-//         },
-//         getFirstParagraphText: function() {
-//             const parser = new DOMParser();
-//             // Create HTMLDocument from string
-//             const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
-//             return htmlDoc.querySelector('p').textContent;
-//         },
-//         getFormattedDateString: function() {
-//             const d = new Date(this.publishedDate);
-//             const options = { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' };
-//             return d.toLocaleDateString('en-US', options);
-//         }
-// }
+function getRandomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
 
-export { createHeroPostItem, createPostItem, setYear };
+function formatDate(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+function getFormattedRandomDate(startDate, endDate) {
+    const randomDate = getRandomDate(startDate, endDate);
+
+    return formatDate(randomDate);
+}
+
+export { createHeroPostItem, createPostItem, setYear, getFormattedRandomDate };

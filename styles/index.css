@@ -1,6 +1,10 @@
+:root {
+    --hero-text-color: #FFF;
+    --default-img-bg-color: #808080;
+}
+
 body {
     height: 100%;
-    display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
@@ -13,18 +17,18 @@ body {
     flex: 1;
 }
 
+/* Hero post styling */
 .hero-post {
-    background: #808080;
+    background: var(--default-img-bg-color);
     position: relative;
 }
 
 .hero-post-wrapper {
     position: absolute;
-    color: #FFF;
+    color: var(--hero-text-color);
     bottom: 0;
     left: 0;
     padding: 0 5vw 5vw;
-    display: grid;
     row-gap: 0.75em;
     grid-template-rows: repeat(3, max-content);
     grid-template-columns: repeat(12, 1fr);
@@ -33,13 +37,13 @@ body {
 .hero-post__date {
     font-size: clamp(4vw, 4vw, 1rem);
     font-weight: 300;
-    color: white;
+    color: var(--hero-text-color);
     grid-column: 1 / 4;
 }
 
 .hero-post__title {
     font-size: clamp(0.7rem, 6vw, 2.5rem);
-    color: white;
+    color: var(--hero-text-color);
     line-height: 108.2%;
     letter-spacing: -0.06rem;
     font-weight: 600;
@@ -54,30 +58,31 @@ body {
     font-size: clamp(0.65rem, 3vw, 5vw);
     font-weight: 300;
     grid-column: 1 / -1;
-    color: white;
+    color: var(--hero-text-color);
 }
 
 .hero-post__image {
     width: 100%;
     height: auto;
-    /* Set background color in case image load fails */
-    background-color: #555555;
+    background-color: var(--default-img-bg-color);
 }
 
+/* Blog post grid */
 .grid--posts {
     margin-top: 2.13em;
+    padding: 0 clamp(0.75em, 5vw, 3.313em);
     grid-template-columns: repeat(auto-fit, minmax(240px, 1.5fr));
     gap: 2.563em;
-    padding: 0 clamp(0.75em, 5vw, 3.313em);
 }
 
+/* View More button styling */
 .btn--underline {
-    border: none;
     display: block;
+    border: none;
     background: none;
     text-decoration: underline;
     font-weight: 700;
-    margin: 27px auto 43px;
+    margin: 1.688em auto 2.688em;
     transition: ease-in-out;
     transition-duration: 0.2s;
 }
@@ -132,10 +137,6 @@ body {
 }
 
 @media (min-width: 1085px) {
-    .hero-post__link {
-        grid-column: 1 / 9;
-    }
-
     .hero-post__title {
         font-size: 2.5rem;
     }
