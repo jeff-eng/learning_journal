@@ -18,34 +18,7 @@ const blogPosts = [
                         <p>Ut tortor pretium viverra suspendisse potenti nullam ac. In fermentum posuere urna nec tincidunt 
                         praesent semper feugiat nibh.</p>
                         <h2>Rutrum Massa Lacus Torquent Justo At</h2>
-                        <p>Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Ac felis donec et odio pellentesque.</p>`,
-        get renderedHtml() { 
-            return this.renderArticleHtml(
-            this.getFormattedDateString(), 
-            this.title, 
-            this.postHtmlString
-            )
-        },
-        renderArticleHtml: function(dateString, title, postHtml) {
-            return `<article class="feature-post">
-                        <header class="feature-post__header">
-                            <time class="feature-post__date" datetime="YYYY-MM-DD">${dateString}</time>
-                            <h1 class="feature-post__heading">${title}</h1>
-                        </header>
-                        ${postHtml}
-                    </article>`;
-        },
-        getFirstParagraphText: function() {
-            const parser = new DOMParser();
-            // Create HTMLDocument from string
-            const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
-            return htmlDoc.querySelector('p').textContent;
-        },
-        getFormattedDateString: function() {
-            const d = new Date(this.publishedDate);
-            const options = { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' };
-            return d.toLocaleDateString('en-US', options);
-        }
+                        <p>Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Ac felis donec et odio pellentesque.</p>`
     },
     {
         id: 1,
@@ -67,33 +40,6 @@ const blogPosts = [
                         praesent semper feugiat nibh.</p>
                         <h2>Rutrum Massa Lacus Torquent Justo At</h2>
                         <p>Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Ac felis donec et odio pellentesque.</p>`,
-        get renderedHtml() { 
-            return this.renderArticleHtml(
-            this.getFormattedDateString(), 
-            this.title, 
-            this.postHtmlString
-            )
-        },
-        renderArticleHtml: function(dateString, title, postHtml) {
-            return `<article class="feature-post">
-                        <header class="feature-post__header">
-                            <time class="feature-post__date" datetime="YYYY-MM-DD">${dateString}</time>
-                            <h1 class="feature-post__heading">${title}</h1>
-                        </header>
-                        ${postHtml}
-                    </article>`;
-        },
-        getFirstParagraphText: function() {
-            const parser = new DOMParser();
-            // Create HTMLDocument from string
-            const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
-            return htmlDoc.querySelector('p').textContent;
-        },
-        getFormattedDateString: function() {
-            const d = new Date(this.publishedDate);
-            const options = { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' };
-            return d.toLocaleDateString('en-US', options);
-        }
     },
     {
         id: 2,
@@ -115,33 +61,6 @@ const blogPosts = [
                         praesent semper feugiat nibh.</p>
                         <h2>Rutrum Massa Lacus Torquent Justo At</h2>
                         <p>Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Ac felis donec et odio pellentesque.</p>`,
-        get renderedHtml() { 
-            return this.renderArticleHtml(
-            this.getFormattedDateString(), 
-            this.title, 
-            this.postHtmlString
-            )
-        },
-        renderArticleHtml: function(dateString, title, postHtml) {
-            return `<article class="feature-post">
-                        <header class="feature-post__header">
-                            <time class="feature-post__date" datetime="YYYY-MM-DD">${dateString}</time>
-                            <h1 class="feature-post__heading">${title}</h1>
-                        </header>
-                        ${postHtml}
-                    </article>`;
-        },
-        getFirstParagraphText: function() {
-            const parser = new DOMParser();
-            // Create HTMLDocument from string
-            const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
-            return htmlDoc.querySelector('p').textContent;
-        },
-        getFormattedDateString: function() {
-            const d = new Date(this.publishedDate);
-            const options = { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' };
-            return d.toLocaleDateString('en-US', options);
-        }
     },
     {
         id: 3,
@@ -163,33 +82,6 @@ const blogPosts = [
                         praesent semper feugiat nibh.</p>
                         <h2>Rutrum Massa Lacus Torquent Justo At</h2>
                         <p>Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Ac felis donec et odio pellentesque.</p>`,
-        get renderedHtml() { 
-            return this.renderArticleHtml(
-            this.getFormattedDateString(), 
-            this.title, 
-            this.postHtmlString
-            )
-        },
-        renderArticleHtml: function(dateString, title, postHtml) {
-            return `<article class="feature-post">
-                        <header class="feature-post__header">
-                            <time class="feature-post__date" datetime="YYYY-MM-DD">${dateString}</time>
-                            <h1 class="feature-post__heading">${title}</h1>
-                        </header>
-                        ${postHtml}
-                    </article>`;
-        },
-        getFirstParagraphText: function() {
-            const parser = new DOMParser();
-            // Create HTMLDocument from string
-            const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
-            return htmlDoc.querySelector('p').textContent;
-        },
-        getFormattedDateString: function() {
-            const d = new Date(this.publishedDate);
-            const options = { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' };
-            return d.toLocaleDateString('en-US', options);
-        }
     },
     {
         id: 4,
@@ -211,33 +103,6 @@ const blogPosts = [
                         praesent semper feugiat nibh.</p>
                         <h2>Rutrum Massa Lacus Torquent Justo At</h2>
                         <p>Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Ac felis donec et odio pellentesque.</p>`,
-        get renderedHtml() { 
-            return this.renderArticleHtml(
-            this.getFormattedDateString(), 
-            this.title, 
-            this.postHtmlString
-            )
-        },
-        renderArticleHtml: function(dateString, title, postHtml) {
-            return `<article class="feature-post">
-                        <header class="feature-post__header">
-                            <time class="feature-post__date" datetime="YYYY-MM-DD">${dateString}</time>
-                            <h1 class="feature-post__heading">${title}</h1>
-                        </header>
-                        ${postHtml}
-                    </article>`;
-        },
-        getFirstParagraphText: function() {
-            const parser = new DOMParser();
-            // Create HTMLDocument from string
-            const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
-            return htmlDoc.querySelector('p').textContent;
-        },
-        getFormattedDateString: function() {
-            const d = new Date(this.publishedDate);
-            const options = { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' };
-            return d.toLocaleDateString('en-US', options);
-        }
     },
     {
         id: 5,
@@ -259,33 +124,6 @@ const blogPosts = [
                         praesent semper feugiat nibh.</p>
                         <h2>Rutrum Massa Lacus Torquent Justo At</h2>
                         <p>Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Ac felis donec et odio pellentesque.</p>`,
-        get renderedHtml() { 
-            return this.renderArticleHtml(
-            this.getFormattedDateString(), 
-            this.title, 
-            this.postHtmlString
-            )
-        },
-        renderArticleHtml: function(dateString, title, postHtml) {
-            return `<article class="feature-post">
-                        <header class="feature-post__header">
-                            <time class="feature-post__date" datetime="YYYY-MM-DD">${dateString}</time>
-                            <h1 class="feature-post__heading">${title}</h1>
-                        </header>
-                        ${postHtml}
-                    </article>`;
-        },
-        getFirstParagraphText: function() {
-            const parser = new DOMParser();
-            // Create HTMLDocument from string
-            const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
-            return htmlDoc.querySelector('p').textContent;
-        },
-        getFormattedDateString: function() {
-            const d = new Date(this.publishedDate);
-            const options = { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' };
-            return d.toLocaleDateString('en-US', options);
-        }
     },
     {
         id: 6,
@@ -313,36 +151,8 @@ const blogPosts = [
                             learned but also write short summaries of what I learned using my own words.</p>
                         <p>That helped me grok what I was learning, and I realized that posting my learning summaries was 
                             also helping others learn and stay motivated.</p>`,
-        get renderedHtml() { 
-            return this.renderArticleHtml(
-            this.getFormattedDateString(), 
-            this.title, 
-            this.postHtmlString
-            )
-        },
-        renderArticleHtml: function(dateString, title, postHtml) {
-            return `<article class="feature-post">
-                        <header class="feature-post__header">
-                            <time class="feature-post__date" datetime="YYYY-MM-DD">${dateString}</time>
-                            <h1 class="feature-post__heading">${title}</h1>
-                        </header>
-                        ${postHtml}
-                    </article>`;
-        },
-        getFirstParagraphText: function() {
-            const parser = new DOMParser();
-            // Create HTMLDocument from string
-            const htmlDoc = parser.parseFromString(this.postHtmlString, 'text/html');
-            return htmlDoc.querySelector('p').textContent;
-        },
-        getFormattedDateString: function() {
-            const d = new Date(this.publishedDate);
-            const options = { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' };
-            return d.toLocaleDateString('en-US', options);
-        }
-    },
-    
-    
+        
+    }
 ];
 
 export { blogPosts };
