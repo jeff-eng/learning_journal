@@ -17,7 +17,7 @@ function createPostItem(blogPost) {
     article.innerHTML = 
         `<a href="#" aria-label="go to article: ${blogPost.title}">                        
             <picture>
-                <source media="(min-width: )" srcset="${blogPost.webpFilepath}" type="image/webp">
+                <source media="(min-width: 308px)" srcset="${blogPost.webpFilepath}" type="image/webp">
                 <img class="blog-post__image" src="${blogPost.jpgFilepath}" alt="${blogPost.imgDescription}">
             </picture>
         </a>
@@ -55,6 +55,7 @@ function createHeroPostItem(blogPost) {
     return article;
 }
 
+// Dynamically set year in footer on each page
 function setYear() {
     document.addEventListener('DOMContentLoaded', () => {
         const date = new Date();
@@ -63,6 +64,7 @@ function setYear() {
     });
 }
 
+// Functions for generating and formatting dates
 function getRandomDate(start, end) {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
@@ -80,4 +82,20 @@ function getFormattedRandomDate(startDate, endDate) {
     return formatDate(randomDate);
 }
 
-export { createHeroPostItem, createPostItem, setYear, getFormattedRandomDate };
+// Create UID recursively
+function generateRandomUID(idLength) {
+    // Base case
+    if (!idLength) {
+        return '';
+    }
+
+    // Generate random character
+    const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+    const randomNum = Math.floor(Math.random() * charset.length);
+    let randomChar = charset[randomNum];
+
+    // Build ID string
+    return randomChar += generateRandomUID(idLength - 1);
+}
+
+export { createHeroPostItem, createPostItem, setYear, getFormattedRandomDate, generateRandomUID };
