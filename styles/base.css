@@ -42,6 +42,12 @@ button {
 .blog-post__image {
     width: 100%;
     border-radius: 0.1875rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-post__image:hover {
+    box-shadow: 0.5em 0.5em 35px #a2a1a1;
+    transform: scale(1.01);
 }
 
 .blog-post__header {
