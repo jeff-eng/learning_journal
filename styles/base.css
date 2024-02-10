@@ -70,7 +70,7 @@ button {
 
 /* Header styling - logo & nav */
 .header {
-    align-items: center;
+    align-items: start;
     justify-content: center;
     padding: 0 clamp(1.25em, 5vw, 3.313em);
     background-color: #FFF;
@@ -82,7 +82,6 @@ button {
     font-size: clamp(0.75rem, 4vw, 1.25rem);
     margin-left: 0.188em;
     margin-right: 1.5em;
-    padding: clamp(18px, 2vh, 24px) 0;
 }
 
 .header__logo {
@@ -90,9 +89,24 @@ button {
     height: auto;
 }
 
+.header {
+    justify-content: space-between;
+    padding: 0.5em 1em;
+}
+
+.logo-container {
+    align-items: center;
+}
+
+.logo-outer-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 .main-nav__link {
     font-size: clamp(0.75rem, 4vw, 1rem);
     font-weight: 600;
+    color: white;
 }
 
 .main-nav__item {
@@ -109,6 +123,118 @@ button {
 
 .main-nav__link:hover {
     text-decoration: underline;
+}
+
+:root {
+    --bar-width: 30px;
+    --bar-height: 4px;
+    --hamburger-gap: 4px;
+    --foreground: #333;
+    --background: #FFF;
+    --hamburger-margin: 1em;
+    --animation-timing: 200ms ease-in-out;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+/* Mobile menu */
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--foreground);
+    transform-origin: left center;
+    border-radius: 5px;
+    transition: opacity var(--animation-timing), width var(--animation-timing), 
+                rotate var(--animation-timing), translate var(--animation-timing), 
+                background-color var(--animation-timing);
+}
+
+.hamburger-menu {
+    /* Multiply height by sqrt of 2 to get hypotenuse aka width of diagonal bar in isoceles triangle*/
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+    position: absolute;
+    transform-origin: left center;
+    top: clamp(0.4em, 1em, var(--hamburger-margin));
+    right: clamp(0.4em, 2vw, var(--hamburger-margin));
+    padding-right: 0.5em;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.hamburger-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hamburger-menu:has(input:checked) {
+    --foreground: white;
+    --background: #333;
+    position: fixed;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+    border: 1px solid var(--background);    
+    box-shadow: 0 0 0 1px var(--background);    
+}
+
+.hamburger-menu:has(input:checked)::before {
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+}
+
+.sidebar {
+    text-align: right;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    translate: 100%;
+    transition: translate var(--animation-timing);
+    margin-left: auto;
+    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+    background-color: var(--foreground);
+    color: var(--background);
+    width: 7em;
+    min-height: 100vh;
+    padding: 2em 0;
+    opacity: 90%;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+    translate: 0;
+    box-shadow: 0.5em 0.5em 2.188em #252525;
+}
+
+.nav {
+    transition: translate var(--animation-timing);
+    translate: 120%;
+    margin-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 3em);
+    background-color: var(--foreground);
 }
 
 /* Footer styling */
@@ -157,4 +283,48 @@ button {
 
 .flex {
     display: flex;
+}
+
+.main-nav {
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 1em;
+    padding-top: 2em;
+    align-items: end;
+}
+
+.alt-nav {
+    display: none;
+}
+
+@media (min-width: 450px) {
+    .hamburger-menu {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-nav__item {
+        color: #000;
+        z-index: 2;
+    }
+
+    .alt-nav-wrapper {
+        margin: auto 0;
+    }
+
+    .alt-nav {
+        display: contents;
+    }
+
+    .alt-main-nav {
+        display: flex;
+        gap: 1em;
+    }
+
+    .alt-main-nav__link:hover {
+        text-decoration: underline;
+    }
 }
