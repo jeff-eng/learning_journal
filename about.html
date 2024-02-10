@@ -3,15 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Learning Journal - Home</title>
+        <title>Learning Journal - About Me</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Source+Sans+3:wght@300;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="styles/base.css">
-        <link rel="stylesheet" href="styles/index.css">
+        <link rel="stylesheet" href="styles/about.css">
     </head>
-    <body class="flex">
+    <body>
         <div class="content-wrapper">
             <header class="flex header">
                 
@@ -57,28 +57,36 @@
                     </ul>
                 </aside>
             </header>
-            <main class="main-container">
-                <!-- Hero article -->
-                <section class="hero-container" id="hero-container">
-    
-                    <!-- Hero post dynamically rendered -->
-    
-                </section>
+        <main class="main-container">
+            <section class="grid about">
+                <picture>
+                    <source media="(max-width: 500px)" srcset="/assets/profile_img_small.webp" type="image/webp">
+                    <img class="about__image" src="/assets/profile_img_small.jpg" alt="portrait photo">
+                </picture>
+                <h1 class="about__heading">Hello! My name is Jeff. Welcome to my learning journal.</h1>
+                <div class="about__paragraph-wrapper">
+                    <p class="about__paragraph">I joined the Scrimba Bootcamp in May 2023 after serendipitously discovering Scrimba while
+                        browsing through Twitter (now X) for React learning resources. I was so impressed
+                        with the quality of the free React Basics course, I decided to join the Bootcamp.</p>
+                    <p class="about__paragraph">It was an opportunity to get up to speed on the latest HTML, CSS, and JavaScript through building 
+                        projects, as well as get expert code reviews, level up with weekly workshops, and connect with 
+                        like-minded people.</p>
+                    <p class="about__paragraph">My learning journal is an opportunity reflect on challenges faced, my problem-solving process,
+                        and hopefully provide learning insights for fellow aspiring developers.</p>
+                </div>
+            </section>
+            <h3 class="recent-posts-heading">Recent posts</h3>
+            <section class="grid grid--posts" id="about-recent-posts">
                 
-                <!-- List of Blog articles -->
-                <section class="grid grid--posts" id="recent-posts">
-                    
-                    <!-- Posts dynamically rendered -->
-    
-                </section>
-                <button class="btn btn--underline" id="btn-view-more">View More</button>
-            </main>
-        </div>
-        <footer class="flex footer">
+                <!-- Recent post previews dynamically generated -->
+
+            </section>
+        </main>
+        <footer class="footer">
             <h3 class="footer__heading">My Learning Journal</h3>
             <p class="footer__copyright">Copyright &copy;<span id="footer__year">2023</span></p>
         </footer>
         <script type="module" src="js/functions.js"></script>
-        <script type="module" src="js/index.js"></script>
+        <script type="module" src="js/about.js"></script>
     </body>
 </html>

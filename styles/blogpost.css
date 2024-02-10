@@ -1,0 +1,47 @@
+body {
+    height: 100%;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-container {
+    padding-bottom: 3.5em;
+}
+
+/* Feature post styling */
+.feature-post h2, .feature-post p {
+    font-size: 1rem;
+    margin-bottom: 1em;
+    color: #151515;
+}
+
+.feature-post h2 {
+    margin-top: 1em;
+}
+
+.feature-post p {
+    line-height: normal;
+}
+
+.feature-post__date {
+    font-size: 0.75rem;
+}
+
+.feature-post img {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    object-position: top;
+    object-fit: cover;
+    border-radius: 0.188em;
+}
+
+@media (min-width: 675px) {
+    .feature-post__date {
+        font-size: 1rem;
+    }
+}
+
+/* Utility classes */
+.flex {
+    display: flex;
+}
