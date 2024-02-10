@@ -13,27 +13,51 @@
     </head>
     <body class="flex">
         <div class="content-wrapper">
-            <header class="flex header">
-                <!-- Logo -->
-                <a href="index.html" aria-label="Go to Home Page">
-                    <picture>
-                        <source media="(max-width: 500px)" srcset="assets/lj_logo100.webp" type="image/webp">
-                        <img class="header__logo" src="assets/lj_logo.jpg" alt="quote bubble">
-                    </picture>
-                </a>
-                <h3 class="header__heading">My Learning Journal</h3>
-                <!-- Nav links -->
-                <nav class="nav">
-                    <ul class="flex main-nav">
-                        <li class="main-nav__item">
-                            <a href="index.html" class="main-nav__link">HOME</a>
-                        </li>
-                        <li class="main-nav__item">
-                            <a href="about.html" class="main-nav__link">ABOUT ME</a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
+            <div class="content-wrapper">
+                <header class="flex header">
+                    
+                    <!-- Logo -->
+                    <div class="flex logo-container">
+                        <a href="index.html" aria-label="Go to Home Page">
+                            <picture>
+                                <source media="(max-width: 500px)" srcset="assets/lj_logo100.webp" type="image/webp">
+                                <img class="header__logo" src="assets/lj_logo.jpg" alt="quote bubble">
+                            </picture>
+                        </a>
+                        <h1 class="header__heading">My Learning Journal</h1>
+                    </div>
+    
+                    <!-- Nav links for screen widths over 450px -->
+                    <div class="alt-nav-wrapper">
+                        <nav class="alt-nav">
+                            <ul class="alt-main-nav">
+                                <li class="alt-main-nav__item">
+                                    <a href="index.html" class="alt-main-nav__link">HOME</a>
+                                </li>
+                                <li class="alt-main-nav__item">
+                                    <a href="about.html" class="alt-main-nav__link">ABOUT ME</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+    
+                    <!-- Hamburger menu for mobile device widths (HTML+CSS only) -->
+                    <label class="hamburger-menu">
+                        <input type="checkbox">
+                    </label>
+    
+                    <!-- Nav links sidebar for mobile widths < 450px -->
+                    <aside class="sidebar">
+                        <ul class="flex main-nav">
+                            <li class="main-nav__item">
+                                <a href="index.html" class="main-nav__link">HOME</a>
+                            </li>
+                            <li class="main-nav__item">
+                                <a href="about.html" class="main-nav__link">ABOUT ME</a>
+                            </li>
+                        </ul>
+                    </aside>
+                </header>
             <main class="main-container">
                 <section class="feature-post-container" id="feature-post-container">
                     
