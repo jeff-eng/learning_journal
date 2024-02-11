@@ -1,6 +1,5 @@
 # Learning Journal
-
-
+Learning Journal is a blog format of webpages with the intent to reflect on learnings as an aspiring developer.  The objective of Learning Journal was to apply responsive design principles and CSS grid to create a set of mobile-first, responsive webpages that adjust to a range screen widths.
 
 ## Table of contents
 
@@ -16,105 +15,133 @@
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
 
-Users should be able to:
+- Implement responsive design principles including:
+  - Mobile-first design
+  - Media queries
+  - Relative units:
+    - `ems` & `rems`
+    - viewport units (`vh`, `vw`)
+  - Percentages for heights and widths
+- Use CSS grid for layout
 
-- View an age in years, months, and days after submitting a valid date through the form
-- Receive validation errors if:
-  - Any field is empty when the form is submitted
-  - The day number is not between 1-31
-  - The month number is not between 1-12
-  - The year is in the future
-  - The date is invalid e.g. 31/04/1991 (there are 30 days in April)
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
-- **Bonus**: See the age numbers animate to their final number when the form is submitted
+### Demo
 
-### Screenshot
-
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Learning Journal Demo](./readme_assets/learning-journal-demo.gif)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Deployed Learning Journal project](https://jeff-eng-learning-journal.netlify.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
+- Vanilla JavaScript
 - CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+#### CSS Grid
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.grid--posts {
+    margin-top: 2.13em;
+    padding: 0 clamp(0.75em, 5vw, 3.313em);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1.5fr));
+    gap: 2.563em;
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+  - `auto-fit` creates new columns to the row when the max size of the grid item set in `minmax` is exceeded and vice-versa when shrinking the viewport.
+  ![auto-fit](./readme_assets/learning-journal-autofit.gif)
+
+```css
+grid-template-rows: repeat(3, max-content);
+```
+  - `fr` units for CSS grid to divide a row/column into fractional units
+  - `minmax` function
+  - `repeat` function
+  - `grid-template-columns` and `grid-template-rows`
+
+#### Clamp function
+```css
+.hero-post__body {
+        font-size: clamp(0.8rem, 1rem, 1.5rem);
+        grid-column: 1 / 11;
+    }
+```
+  - `clamp(min, val, max)` takes three arguments: **_min value_**, **_preferred value_**, **_max value_**; the value that is used is determined by the size of the viewport. Using this function helped elements scale smoothly without needing to use media queries to set font sizes at specific breakpoints.
+
+#### Relative units
+```css
+.blog-post__title {
+  font-size: clamp(1.3rem, 3.5vw, 1.5rem);
+  min-height: 1.25em;
+}
+```
+  - **rem** (relative em) - used primarily for font sizing. Using rem unit allows user to be in control of the font sizing of the page. 
+```css
+.blog-post__title {
+  font-size: clamp(1.3rem, 3.5vw, 1.5rem);
+  min-height: 1.25em;
+}
+```
+  - **em** - Can be used in place of pixel values. Learned that ems should not be used for font sizing because of the potential compounding effect if parent element font size changes, which affects the font size of a child element that uses `em` for font sizing. `em` is appropriate for margin and padding.
+
+```css
+.main-container {
+    padding: 2em clamp(0.75em, 5vw, 3.313em) 0;
+}
+```
+  - **vw** / **vh** - Viewport width / viewport height (viewport units) - scales in proportion to percentage of the viewport width/height. `5vw` translates to 5% of viewport width (maximum of 100 `vw` or `vh` units).
+
+#### Media queries
+```css
+@media (min-width: 750px) {
+    .hero-post__link {
+        grid-column: 1 / 9;
+    }
+
+    .hero-post__body {
+        grid-column: 1 / 10;
+    }   
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+#### Complex Pseudoclass selector(s)
+```css
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+    border: 1px solid var(--background);    
+    box-shadow: 0 0 0 1px var(--background);    
+}
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+This project was an excellent exercise in applying responsive design principles. I look forward to using CSS Grid for layouts in future projects.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [CSS Only Hamburger menu](https://youtu.be/dAIVbLrAb_U?si=ZNvuSmOyV_X9AskA) - This helped me implement a hamburger menu on my mobile screen sizes using CSS only.
+- [Learn CSS Grid](https://scrimba.com/learn/cssgrid) - This free Scrimba course really helped me improve my understanding CSS Grid and all of its various properties.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+### Conventions
+- BEM (Block__Element--Modifier) naming convention for CSS classes
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- [Jeff Eng](https://www.jeffeng.com)
+- X (formerly Twitter) - [@elev8eng](https://www.twitter.com/elev8eng)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
-## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
 
