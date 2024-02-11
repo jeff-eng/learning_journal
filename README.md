@@ -22,7 +22,7 @@ Learning Journal is a blog format of webpages with the intent to reflect on lear
   - Mobile-first design
   - Media queries
   - Relative units:
-    - `ems` & `rems`
+    - `em` & `rem`
     - viewport units (`vh`, `vw`)
   - Percentages for heights and widths
 - Use CSS Grid for layout
