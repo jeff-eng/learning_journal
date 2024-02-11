@@ -1,5 +1,5 @@
 # Learning Journal
-Learning Journal is a blog format of webpages with the intent to reflect on learnings as an aspiring developer.  The objective of Learning Journal was to apply responsive design principles and CSS grid to create a set of mobile-first, responsive webpages that adjust to a range screen widths.
+Learning Journal is a blog format of webpages with the intent to reflect on learnings as an aspiring developer.  The objective of Learning Journal was to apply responsive design principles and CSS Grid to create a set of mobile-first, responsive webpages that adjust to a range screen widths.
 
 ## Table of contents
 
@@ -25,7 +25,7 @@ Learning Journal is a blog format of webpages with the intent to reflect on lear
     - `ems` & `rems`
     - viewport units (`vh`, `vw`)
   - Percentages for heights and widths
-- Use CSS grid for layout
+- Use CSS Grid for layout
 
 ### Demo
 
@@ -130,7 +130,7 @@ This project was an excellent exercise in applying responsive design principles.
 ### Useful resources
 
 - [CSS Only Hamburger menu](https://youtu.be/dAIVbLrAb_U?si=ZNvuSmOyV_X9AskA) - This helped me implement a hamburger menu on my mobile screen sizes using CSS only.
-- [Learn CSS Grid](https://scrimba.com/learn/cssgrid) - This free Scrimba course really helped me improve my understanding CSS Grid and all of its various properties.
+- [Learn CSS Grid](https://scrimba.com/learn/cssgrid) - This free Scrimba course really helped me improve my understanding of CSS Grid and all of its various properties.
 
 ### Conventions
 - BEM (Block__Element--Modifier) naming convention for CSS classes
