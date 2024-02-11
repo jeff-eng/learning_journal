@@ -13,7 +13,6 @@ Learning Journal is a blog format of webpages with the intent to reflect on lear
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
