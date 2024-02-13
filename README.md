@@ -5,13 +5,14 @@ Learning Journal is a blog format of webpages with the intent to reflect on lear
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Demo](#demo)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
+  - [Conventions](#conventions)
 - [Author](#author)
 
 ## Overview
@@ -33,7 +34,7 @@ Learning Journal is a blog format of webpages with the intent to reflect on lear
 
 ### Links
 
-- Live Site URL: [Deployed Learning Journal project](https://jeff-eng-learning-journal.netlify.app/)
+- Live Site URL: [Learning Journal](https://jeff-eng-learning-journal.netlify.app/)
 
 ## My process
 
